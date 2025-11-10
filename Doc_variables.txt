@@ -1,0 +1,68 @@
+DOCUMENTACIÓN DE VARIABLES DEL PLUGIN MINIJUEGO
+
+VARIABLES DEL SISTEMA:
+------------------------
+- _internalScore (id 3): 
+  * Variable que almacena el puntaje actual del minijuego.
+  * Se accede mediante la propiedad global window._internalScore (get/set)
+  * Valor inicial: 10 (si estaba en 0)
+  * Se reduce en 1 por cada respuesta incorrecta
+  * Se muestra en la caja "Puntaje actividad"
+
+- _finalScore (valor fijo 175):
+  * Puntaje base que se suma al resultado final cuando se completa correctamente
+  * Se suma al valor de la variable 4 cuando el jugador pasa la prueba
+
+- _gamePassed (booleano):
+  * Indica si el jugador ya completó el minijuego con éxito
+  * Evita que se repita el minijuego después de aprobar
+
+VARIABLES DE JUEGO (Game Variables):
+------------------------------------
+- Variable 3: 
+  * Vinculada a _internalScore
+  * Almacena el puntaje temporal durante el minijuego
+  * Se reinicia a 10 si estaba en 0 al iniciar
+
+- Variable 4:
+  * Almacena el "Puntaje Tarea 2" (mostrado en pantalla)
+  * Se incrementa con _internalScore cuando se completa correctamente
+  * Persiste entre sesiones
+
+- Variable 5:
+  * Contador de intentos restantes
+  * Valor inicial: 10 (si estaba en 0)
+  * Se reduce en 1 por cada intento fallido
+  * Si llega a 0, bloquea el minijuego
+
+ESTADOS DEL JUEGO (Game System):
+--------------------------------
+- _miniGamePassed:
+  * Booleano que indica si el jugador aprobó el minijuego
+  * Se establece en true al completar correctamente
+  * Evita repetir el minijuego
+
+- _miniGameLocked:
+  * Booleano que indica si el minijuego está bloqueado
+  * Se activa cuando Variable 5 llega a 0
+  * Muestra la escena Scene_GameLocked
+
+OTROS ELEMENTOS:
+----------------
+- _currentDragged:
+  * Referencia al número que está siendo arrastrado
+  * Null cuando no hay arrastre activo
+
+- _dropBoxes:
+  * Array que contiene las cajas donde se colocan los números
+  * Cada caja tiene:
+    - _occupied: si tiene un número
+    - _correctNumber: respuesta correcta
+    - _currentNumber: número colocado
+
+- _draggableNumbers:
+  * Array con los números arrastrables
+  * Cada número tiene:
+    - _startX/Y: posición inicial
+    - _number: valor numérico
+    - _dragging: estado de arrastre
