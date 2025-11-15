@@ -27,5 +27,6 @@ var $plugins =
 {"name":"CondicionesVidaDeterminantes","status":true,"description":"[v2.0] Minijuego de Asociación de Porcentajes - 18 cajas","parameters":{}},
 {"name":"NivelesDeprevwncionSalud","status":true,"description":"[v1.0] Minijuego base con comando de activación desde evento.","parameters":{}},
 {"name":"CheckConexionGS","status":true,"description":"","parameters":{}},
-{"name":"ConnetGS","status":true,"description":"Guardado en Google Sheets mediante API externa (Apps Script) - v1.0","parameters":{}}
+{"name":"ConnetGS","status":false,"description":"Guardado en Google Sheets mediante API externa (Apps Script) - v1.0","parameters":{}},
+{"name":"PruebaConetGS","status":true,"description":"Guardado en Google Sheets mediante API externa (Apps Script) - v1.0","parameters":{}}
 ];
